@@ -24,7 +24,8 @@
             <label class='h4' for="sel1">From:</label>
             <select class="form-control" v-model='from' id="sel1">
               <option :value='currency.id' v-for='currency in formatedCurrencies'>
-                {{currency.currencyName +' ('+ currency.currencySymbol+')'  }}</option>
+                {{currency.currencyName +  ( typeof currency.currencySymbol === 'undefined' ?  '' : ' ( '+currency.currencySymbol+ ' ) ' ) }}
+              </option>
             </select>
           </div>
         </div>
